@@ -1,5 +1,6 @@
 from transformers import AutoTokenizer, T5ForConditionalGeneration
 import pandas as pd
+from sys import version_info
 
 tokenizer = AutoTokenizer.from_pretrained("Salesforce/codet5-large-ntp-py")
 model = T5ForConditionalGeneration.from_pretrained("Salesforce/codet5-large-ntp-py")
@@ -37,8 +38,6 @@ class CodeGenerator(mlflow.pyfunc.PythonModel):
     result = {'code': generated_code}
     return json.dumps(result)
   
-
-from sys import version_info
  
 PYTHON_VERSION = "{major}.{minor}.{micro}".format(major=version_info.major,
                                                   minor=version_info.minor,
