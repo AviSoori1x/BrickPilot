@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import json
 
-class BrickPilot():
+class BrickPilot:
   
   def __init__(self, token, codegen_url, explain_url):
     self.token = token
